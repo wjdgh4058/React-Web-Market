@@ -65,7 +65,7 @@ export function AddCartPopup({ data }) {
 
     if (isduplicate) {
       localStorage.setItem('addCart', JSON.stringify(addCartLocalData));
-      console.log('이미 장바구니에 담겨 있습니다 !');
+      alert('이미 장바구니에 담겨 있습니다 !');
       return;
     }
 

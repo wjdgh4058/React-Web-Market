@@ -5,36 +5,28 @@ import { useRecoilState } from 'recoil';
 import { useEffect, useState } from 'react';
 import { selectTotalPriceState } from '@/@atom/cartPage/selectTotalPriceState';
 import { changePriceNumToStringNoWon } from '@/utils/priceNumberToStringNoWon';
+import { currentUserState } from '@/@atom/user/currentUserState';
+import { useReadData } from '@/firebase/firestore';
 // import { selectInfoState } from '@/@atom/cartPage/selectInfoState';
 
 export function CartPageCredit() {
-  // const [selectInfo, setSelectInfo] = useRecoilState(selectInfoState);
+  let cartLocalData = [];
+
+  cartLocalData = JSON.parse(localStorage.getItem('addCart'));
+
   const [selectTotalPrice, setSelectTotalPrice] = useRecoilState(
     selectTotalPriceState
   );
 
-  // const [totalPrice, setTotalPrice] = useState(0);
+  const [currentUser, setCurrentUser] = useRecoilState(currentUserState);
 
-  // console.log(selectInfo);
-  // console.log('aa');
-
-  // let totalPrice = 0;
-
-  // if (selectInfo.length > 0) {
-  //   totalPrice = selectInfo.map((a) => a.price).reduce((a, b) => a + b);
-  // }
-
-  // const totalPrice = () => {
-  //   selectInfo.map((a) => a.price).reduce((a, b) => a + b);
-  // }
-
-  // const sumPrice = selectInfo.reduce((a, b) => {
-  //   return a.price + b;
-  // });
-
-  // setTotalPrice(sumPrice);
-
-  // console.log(totalPrice);
+  const handleOrder = () => {
+    if (currentUser) {
+      alert('주문 페이지로 이동합니다.');
+    } else {
+      alert('로그인 해야만 주문이 가능합니다.');
+    }
+  };
 
   return (
     <div className={styles.cartCredit}>
@@ -42,14 +34,20 @@ export function CartPageCredit() {
         <div className={styles.cartCreditAddress}>
           <p className={styles.cartCreditAddressTitle}>배송지</p>
           <div className={styles.cartCreditAddressInfo}>
-            <p className={styles.cartCreditAddressInfoText}>
-              <em className={styles.cartCreditAddressInfoTextEm}>
-                배송지를 등록
-              </em>
-              하고
-              <br />
-              <span>구매 가능한 상품을 확인하세요!</span>
-            </p>
+            {currentUser ? (
+              <p className={styles.cartCreditAddressInfoText}>
+                {currentUser.adress}
+              </p>
+            ) : (
+              <p className={styles.cartCreditAddressInfoText}>
+                <em className={styles.cartCreditAddressInfoTextEm}>
+                  배송지를 등록
+                </em>
+                하고
+                <br />
+                <span>구매 가능한 상품을 확인하세요!</span>
+              </p>
+            )}
             <button
               className={styles.cartCreditAddressInfoSerchBtn}
               type="button"
@@ -112,11 +110,21 @@ export function CartPageCredit() {
           </div>
         </div>
         <div className={styles.cartCreditOrder}>
-          <button className={styles.cartCreditOrderBtn} type="button">
-            <span className={styles.cartCreditOrderBtnText}>
-              배송지를 입력해주세요
-            </span>
-          </button>
+          {cartLocalData.length > 0 ? (
+            <button
+              className={styles.cartCreditOrderBtnOn}
+              onClick={handleOrder}
+              type="button"
+            >
+              <span className={styles.cartCreditOrderBtnText}>주문하기</span>
+            </button>
+          ) : (
+            <button className={styles.cartCreditOrderBtnOff} type="button">
+              <span className={styles.cartCreditOrderBtnText}>
+                배송지를 입력해주세요
+              </span>
+            </button>
+          )}
           <ul className={styles.cartCreditOrderExplanation}>
             <li
               className={styles.cartCreditOrderExplanationList}

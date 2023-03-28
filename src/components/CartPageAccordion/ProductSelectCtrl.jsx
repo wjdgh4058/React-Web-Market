@@ -33,6 +33,15 @@ export function ProductSelectCtrl({ cartData }) {
     totalPrice = selectInfo.map((a) => a.price).reduce((a, b) => a + b);
   }
 
+  // useEffect(() => {
+  //   if (totalSelectState.length > 0) {
+  //     const filteredTotalSelect = totalSelectState.filter((item, index) => {
+  //       return totalSelectState.indexOf(item) === index;
+  //     });
+  //     setTotalSelectState(filteredTotalSelect);
+  //   }
+  // }, []);
+
   const handleAllSelect = () => {
     if (!selectBtnTogle) {
       const nameArr = [];

@@ -157,7 +157,7 @@ $PrimaryColor: rgb(161 95 4);
   &Order {
     padding-top: 20px;
 
-    &Btn {
+    &BtnOff {
       background-color: #ddd;
       display: block;
       padding: 0 10px;
@@ -170,12 +170,26 @@ $PrimaryColor: rgb(161 95 4);
       // background-color: $PrimaryColor;
       border: 0 none;
       font-weight: 500;
-
-      &Text {
-        display: inline-block;
-        font-size: 16px;
-        font-weight: 500;
-      }
+      cursor: not-allowed;
+    }
+    &BtnOn {
+      background-color: $PrimaryColor;
+      display: block;
+      padding: 0 10px;
+      text-align: center;
+      overflow: hidden;
+      width: 100%;
+      height: 56px;
+      border-radius: 3px;
+      color: #fff;
+      // background-color: $PrimaryColor;
+      border: 0 none;
+      font-weight: 500;
+    }
+    &BtnText {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 500;
     }
 
     &Explanation {
