@@ -11,6 +11,7 @@ import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import PopupAd from '@/components/PopupAd/PopupAd';
 import MainBannerCarousel from '@/components/MainBannerCarousel/MainBannerCarousel';
+import { useEffect } from 'react';
 
 function HomePage() {
   let currentProduct = useRecoilValue(currentProductState);
@@ -19,6 +20,9 @@ function HomePage() {
   //   console.log('currentProduct', currentProduct);
   // }
   // console.log('Lendered', currentProduct);
+  useEffect(() => {
+    localStorage.setItem('addCart', JSON.stringify([]));
+  });
 
   const navigate = useNavigate();
 
