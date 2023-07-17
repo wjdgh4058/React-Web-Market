@@ -5,9 +5,6 @@ import { useEffect } from 'react';
 import { useReadData } from '@/firebase/firestore';
 import loadSwiperSlider from '@/utils/swiper-utils/loadSwiperSlider';
 import MainBannerCard from './MainBannerCard';
-import swiperBanner1 from '../../../public/img/MainBanner/swiperBanner1.jpg';
-import swiperBanner2 from '../../../public/img/MainBanner/swiperBanner2.jpg';
-import swiperBanner3 from '../../../public/img/MainBanner/swiperBanner3.jpg';
 export default function MainBannerCarousel(props) {
   const { title } = props;
   const swiperParams = {
@@ -16,7 +13,11 @@ export default function MainBannerCarousel(props) {
     autoplay: { delay: 3500, disableOnInteraction: true },
   };
   // const imgLoc = '@/../public/img/MainBanner/swiperBanner';
-  const bannerImgList = [swiperBanner1, swiperBanner2, swiperBanner3];
+  const bannerImgList = [
+    'https://ifh.cc/g/Gbhyby.jpg',
+    'https://ifh.cc/g/XL9T7o.jpg',
+    'https://ifh.cc/g/fyJflz.jpg',
+  ];
 
   const swiperSliderContensArray = loadSwiperSlider(
     bannerImgList,
