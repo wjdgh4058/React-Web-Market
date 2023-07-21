@@ -19,53 +19,42 @@ export function CartPageAccordion({ data }) {
       setRoomTemperature(storingWaySort(data, '상온'));
     }
   }, [data]);
-  if (data) {
-    if (!data || data.length < 1) {
-      return (
-        <div>
-          <ProductSelectCtrl cartData={data} />
-          <div className={styles.nonAddCartProduct}>
-            장바구니에 담긴 상품이 없습니다.
-          </div>
-          <ProductSelectCtrl cartData={data} />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <ProductSelectCtrl cartData={data} />
-          {refrigerated.length > 0 && (
-            <CartPageSet
-              data={refrigerated}
-              productType={'냉장'}
-              storingWayImg={refrigeratedImg}
-            />
-          )}
-          {frozen.length > 0 && (
-            <CartPageSet
-              data={frozen}
-              productType={'냉동'}
-              storingWayImg={frozenImg}
-            />
-          )}
-          {roomTemperature.length > 0 && (
-            <CartPageSet
-              data={roomTemperature}
-              productType={'상온'}
-              storingWayImg={normalImg}
-            />
-          )}
-          <ProductSelectCtrl cartData={data} />
-        </div>
-      );
-    }
-  } else {
+
+  if (!data || data.length < 1) {
     return (
       <div>
         <ProductSelectCtrl cartData={data} />
         <div className={styles.nonAddCartProduct}>
           장바구니에 담긴 상품이 없습니다.
         </div>
+        <ProductSelectCtrl cartData={data} />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <ProductSelectCtrl cartData={data} />
+        {refrigerated.length > 0 && (
+          <CartPageSet
+            data={refrigerated}
+            productType={'냉장'}
+            storingWayImg={refrigeratedImg}
+          />
+        )}
+        {frozen.length > 0 && (
+          <CartPageSet
+            data={frozen}
+            productType={'냉동'}
+            storingWayImg={frozenImg}
+          />
+        )}
+        {roomTemperature.length > 0 && (
+          <CartPageSet
+            data={roomTemperature}
+            productType={'상온'}
+            storingWayImg={normalImg}
+          />
+        )}
         <ProductSelectCtrl cartData={data} />
       </div>
     );
