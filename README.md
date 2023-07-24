@@ -60,9 +60,29 @@
 
 # TEAM 밥을사자 🧑‍💻
 
-|               [이정호(wjdgh4058)](https://github.com/wjdgh4058)               |                 [박원준(djswns7)](https://github.com/djswns7)                 |               [소정(jeong-dev)](https://github.com/jeong-dev)                |               [정진이(luvdo0112)](https://github.com/luvdo0112)               |             [장서현(seohyun0620)](https://github.com/seohyun0620)             |
-| :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
-| ![이정호의 프로필 사진](https://avatars.githubusercontent.com/u/66310772?v=4) | ![박원준의 프로필 사진](https://avatars.githubusercontent.com/u/72201211?v=4) | ![소정의 프로필 사진](https://avatars.githubusercontent.com/u/119641111?v=4) | ![정진이의 프로필 사진](https://avatars.githubusercontent.com/u/60957961?v=4) | ![장서현의 프로필 사진](https://avatars.githubusercontent.com/u/52877992?v=4) |
+<table>
+  <tr>
+    <th>이정호</th>
+    <th>소 정</th>
+    <th>박원준</th>
+    <th>장서현</th>
+    <th>정진이</th>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/wjdgh4058">@wjdgh4058</a></td>
+    <td align="center"><a href="https://github.com/jeong-dev">@jeong-dev</a></td>
+    <td align="center"><a href="https://github.com/djswns7">@djswns7</a></td>
+    <td align="center"><a href="https://github.com/seohyun0620">@seohyun0620</a></td>
+    <td align="center"><a href="https://github.com/luvdo0112">@luvdo0112</a></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://github.com/wjdgh4058.png" width="120"></td>
+    <td align="center"><img src="https://github.com/jeong-dev.png" width="120"></td>
+    <td align="center"><img src="https://github.com/djswns7.png" width="120"></td>
+    <td align="center"><img src="https://github.com/seohyun0620.png" width="120"></td>
+    <td align="center"><img src="https://github.com/luvdo0112.png" width="120"></td>
+  </tr>
+</table>
 
 ---
 
